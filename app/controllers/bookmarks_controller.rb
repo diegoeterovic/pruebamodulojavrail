@@ -9,6 +9,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/1 or /bookmarks/1.json
   def show
+    render(partial: 'show') if request.xhr?
   end
 
   # GET /bookmarks/new
