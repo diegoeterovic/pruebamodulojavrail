@@ -7,13 +7,30 @@
 
 <p>
   <strong>Parent category:</strong>
-  <%= @category.parent_category %>
+    <% if @category.parent_category.present? %>
+      <%= Category.find_by(id: category.parent_category).title %>
+      <% else %>
+      <p>No tiene</p>
+    <% end %>
 </p>
 
 <p>
-  <strong>Public:</strong>
+  <strong>Categorías Hijas:</strong>
+
+  <% @sonscategory.each do |category| %>
+    <li><%= category.title %></li>
+  <% end %>
+</p>
+
+
+
+<p>
+  <strong>Público:</strong>
   <%= @category.public %>
 </p>
+
+
+
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

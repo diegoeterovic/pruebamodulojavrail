@@ -4,6 +4,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks or /bookmarks.json
   def index
     @bookmarks = Bookmark.all
+    
   end
 
   # GET /bookmarks/1 or /bookmarks/1.json
@@ -13,6 +14,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/new
   def new
     @bookmark = Bookmark.new
+    
   end
 
   # GET /bookmarks/1/edit
@@ -64,6 +66,6 @@ class BookmarksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bookmark_params
-      params.require(:bookmark).permit(:title, :url, :category_id)
+      params.require(:bookmark).permit(:title, :url, :category_id, :subject_id)
     end
 end

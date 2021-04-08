@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bm Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bm_types.each do |bm_type| %>
+      <tr>
+        <td><%= bm_type.name %></td>
+        <td><%= link_to 'Show', bm_type %></td>
+        <td><%= link_to 'Edit', edit_bm_type_path(bm_type) %></td>
+        <td><%= link_to 'Destroy', bm_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bm Type', new_bm_type_path %>

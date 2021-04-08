@@ -25,6 +25,10 @@
     <%= form.label :category_id %>
     <%= collection_select(:bookmark, :category_id, Category.all, :id, :title) %>
   </div>
+  <div class="field"> 
+    <%= form.label :subject_id %>
+    <%= collection_select(:bookmark, :subject_id, Subject.all, :id, :name,  :include_blank => true) %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

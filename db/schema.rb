@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_211242) do
+ActiveRecord::Schema.define(version: 2021_04_07_234628) do
+
+  create_table "bm_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.string "title"
@@ -19,13 +25,23 @@ ActiveRecord::Schema.define(version: 2021_04_07_211242) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.integer "bm_types_id"
+    t.integer "subject_id"
+    t.index ["bm_types_id"], name: "index_bookmarks_on_bm_types_id"
     t.index ["category_id"], name: "index_bookmarks_on_category_id"
+    t.index ["subject_id"], name: "index_bookmarks_on_subject_id"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.integer "parent_category"
     t.boolean "public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,2 @@
+class BmType < ApplicationRecord
+end
