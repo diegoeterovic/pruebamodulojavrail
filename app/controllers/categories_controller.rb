@@ -20,6 +20,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+
   end
 
   # POST /categories or /categories.json
@@ -47,6 +48,12 @@ class CategoriesController < ApplicationController
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
+    end
+
+    @sonscategory = Category.where(parent_category: @category.id)
+    @sonscategory.each do |son|
+      son.public = @category.public
+      son.save
     end
   end
 

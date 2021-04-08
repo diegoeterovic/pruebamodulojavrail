@@ -8,7 +8,7 @@
 <p>
   <strong>Parent category:</strong>
     <% if @category.parent_category.present? %>
-      <%= Category.find_by(id: category.parent_category).title %>
+      <%= Category.find_by(id: @category.parent_category).title %>
       <% else %>
       <p>No tiene</p>
     <% end %>

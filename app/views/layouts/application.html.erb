@@ -9,12 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <nav>
-    <ul>
-      <li><%= link_to  "Bookmarks", bookmarks_path %></li>
-      <li><%= link_to  "Categorias", categories_path %></li>
-      <li><%= link_to  "Tipos", subjects_path %></li>
+    
+      <%= link_to  "Bookmarks", bookmarks_path %>
+      <%= link_to  "Categorias", categories_path %>
+      <%= link_to  "Tipos", subjects_path %>
       
-    </ul>
+    
   </nav>
   <body>
     <%= yield %>
