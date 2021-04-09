@@ -20,7 +20,6 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-
   end
 
   # POST /categories or /categories.json
@@ -64,6 +63,18 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def json
+    @categories = Category.all
+    render json: @categories
+ #curl -i -H 'Accept: application/json' -H 'Content-Type: application/json' -X GET http://localhost:3000/json
+  end
+
+  def perid
+    @category = Category.find(params[:id])
+    render json: @category
+ #curl -i  -X GET http://localhost:3000/json
   end
 
   private
