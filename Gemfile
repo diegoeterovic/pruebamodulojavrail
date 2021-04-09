@@ -64,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Creación de registros
 gem "faker"
+
+# gema para gráficos
+
+gem "chartkick"

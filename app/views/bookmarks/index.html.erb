@@ -24,4 +24,10 @@
 
 <br>
 
-<%= link_to 'New Bookmark', new_bookmark_path %>
+
+<h1>Bookmarks por categoría</h1>
+<%= pie_chart Bookmark.joins(:category).group("categories.title").count %>
+
+
+<h1>Bookmarks por tipo</h1>
+<%= pie_chart Bookmark.joins(:subject).group("subjects.name").count %>

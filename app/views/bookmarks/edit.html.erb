@@ -4,3 +4,7 @@
 
 <%= link_to 'Show', @bookmark %> |
 <%= link_to 'Back', bookmarks_path %>
+
+
+
+<%= pie_chart @bookmarks.group(:category).count %>
