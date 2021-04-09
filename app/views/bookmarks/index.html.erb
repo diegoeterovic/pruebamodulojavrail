@@ -2,6 +2,10 @@
 
 <h1>Bookmarks</h1>
 
+<div id ="form_bookmark">
+  <%= render  "form", bookmark: @bookmark %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -13,22 +17,8 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.title %></td>
-        <td><%= bookmark.url %></td>
-        <td><%= bookmark.category.title %></td>
-        <td>
-          <% if bookmark.subject.present? %>
-            <%= bookmark.subject.name %>
-          <% end %>
-        </td>
-        <td><%= link_to 'Show', bookmark, remote: true %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody id = "bookmarks">
+    <%= render  "bookmarks" %>
   </tbody>
 </table>
 

@@ -4,12 +4,12 @@ class BookmarksController < ApplicationController
   # GET /bookmarks or /bookmarks.json
   def index
     @bookmarks = Bookmark.all
+    @bookmark = Bookmark.new
     
   end
 
   # GET /bookmarks/1 or /bookmarks/1.json
   def show
-    render(partial: 'show') if request.xhr?
   end
 
   # GET /bookmarks/new
@@ -28,6 +28,7 @@ class BookmarksController < ApplicationController
 
     respond_to do |format|
       if @bookmark.save
+        format.js {redirect_to root_path, notice: "Creado con exito"}
         format.html { redirect_to @bookmark, notice: "Bookmark was successfully created." }
         format.json { render :show, status: :created, location: @bookmark }
       else
