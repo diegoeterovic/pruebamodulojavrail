@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema de etiquetas para páginas web
 
-Things you may want to cover:
+Desarrollado en 
 
-* Ruby version
+    ruby 2.5.3
+    rails 5.2.5
+Gemas usadas
 
-* System dependencies
+    faker (*)
+    chartkick
 
-* Configuration
+Para correr el programa se debe
 
-* Database creation
+Clonar el repositorio
 
-* Database initialization
+correr:
 
-* How to run the test suite
+bundler
+rails db:seed
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+y visitar
 
-* Deployment instructions
+http://localhost:3000/
 
-* ...
+Una vez dentro, encontraras 12 etiquetas de pruebas, 4 categorías (la ID=1 es la padre de las demás) y 4 tipos de etiqueta
+
+
+(*) se dejó el código de faker pero no se uso dado que se hizo un seed con contenido real para que sea mas real
+
+
+
+
+
